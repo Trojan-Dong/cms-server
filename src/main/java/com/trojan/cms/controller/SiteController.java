@@ -2,14 +2,17 @@ package com.trojan.cms.controller;
 
 
 import cn.hutool.json.JSONObject;
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.google.gson.JsonObject;
 import com.trojan.cms.common.result.CodeMsg;
 import com.trojan.cms.common.result.PageResult;
 import com.trojan.cms.common.result.Result;
 import com.trojan.cms.common.security.authentication.UserPrincipal;
 import com.trojan.cms.entity.Site;
 import com.trojan.cms.service.SiteService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +30,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("//site")
+@Slf4j
 public class SiteController {
     @Resource
     private SiteService siteService;
@@ -35,6 +39,7 @@ public class SiteController {
     public Result item(@RequestBody JSONObject jsonObject) {
         Long siteId = jsonObject.getLong("siteId");
         Site site = siteService.getById(siteId);
+        log.info(JSON.toJSONString(site));
         if (site != null) {
             return Result.success(site);
         } else {

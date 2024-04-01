@@ -15,6 +15,7 @@ import com.trojan.cms.service.CateService;
 import com.trojan.cms.service.SiteService;
 import com.trojan.cms.service.UserService;
 import com.github.benmanes.caffeine.cache.Cache;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,61 +34,68 @@ import java.util.concurrent.FutureTask;
 
 @RestController
 @RequestMapping("/index")
+@Slf4j
 public class IndexController {
+    
     @Resource
     private UserService userService;
+    
     @Resource
     private SiteService siteService;
+    
     @Resource
     private CateService cateService;
+    
     @Resource
     private ArticleService articleService;
+    
     @Resource
     Cache<String, Object> caffeineCache;
+    
     @RequestMapping(value = "/admin/index", method = RequestMethod.POST)
     public Result adminIndex(UserPrincipal userPrincipal, @RequestBody JSONObject jsonObject) {
-        Map<String,Object> result = new HashMap<>();
-        if (userPrincipal.getRole()!=0){
+        Map<String, Object> result = new HashMap<>();
+        if (userPrincipal.getRole() != 0) {
             Site site = siteService.getById(userPrincipal.getSiteId());
-            if (site!=null){
+            if (site != null) {
                 QueryWrapper<Article> articleQueryWrapper = new QueryWrapper<>();
-                articleQueryWrapper.eq("site_id",site.getId());
-                articleQueryWrapper.eq("status",1);
+                articleQueryWrapper.eq("site_id", site.getId());
+                articleQueryWrapper.eq("status", 1);
                 Integer article_total = articleService.count(articleQueryWrapper);
-                articleQueryWrapper.eq("recommend",1);
+                articleQueryWrapper.eq("recommend", 1);
                 Integer article_recommend_total = articleService.count(articleQueryWrapper);
                 QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
-                userQueryWrapper.eq("site_id",site);
-                userQueryWrapper.eq("status",1);
+                userQueryWrapper.eq("site_id", site);
+                userQueryWrapper.eq("status", 1);
                 Integer admin_total = userService.count(userQueryWrapper);
-                result.put("site",site);
-                result.put("article_total",article_total);
-                result.put("article_recommend_total",article_recommend_total);
-                result.put("admin_total",admin_total);
+                result.put("site", site);
+                result.put("article_total", article_total);
+                result.put("article_recommend_total", article_recommend_total);
+                result.put("admin_total", admin_total);
             }
         }
-        if (userPrincipal.getRole()==0){
+        if (userPrincipal.getRole() == 0) {
             QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
-            userQueryWrapper.eq("status",1);
+            userQueryWrapper.eq("status", 1);
             Integer admin_total = userService.count(userQueryWrapper);
             QueryWrapper<Site> siteQueryWrapper = new QueryWrapper<>();
-            siteQueryWrapper.eq("status",1);
+            siteQueryWrapper.eq("status", 1);
             Integer site_total = siteService.count(siteQueryWrapper);
             QueryWrapper<Article> articleQueryWrapper = new QueryWrapper<>();
-            articleQueryWrapper.eq("status",1);
+            articleQueryWrapper.eq("status", 1);
             Integer article_total = articleService.count(articleQueryWrapper);
-            result.put("admin_total",admin_total);
-                result.put("site_total",site_total);
-            result.put("article_total",article_total);
+            result.put("admin_total", admin_total);
+            result.put("site_total", site_total);
+            result.put("article_total", article_total);
         }
         return Result.success(result);
     }
-
+    
     @RequestMapping(value = "/common/index", method = RequestMethod.POST)
     public Result index(@RequestBody JSONObject jsonObject) {
         Long siteId = jsonObject.getLong("siteId");
         Map<String, Object> data = (Map<String, Object>) caffeineCache.asMap().get(siteId.toString());
-        if (data != null){
+        if (data != null) {
             return Result.success(data);
         }
         ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -110,27 +118,27 @@ public class IndexController {
         } finally {
             executorService.shutdown();
         }
-        caffeineCache.put(siteId.toString(),data);
+        caffeineCache.put(siteId.toString(), data);
         return Result.success(data);
     }
-
+    
     public List<Article> getRecommendArticle(Long siteId) {
         Site site = siteService.getById(siteId);
         List<Article> articleList = new ArrayList<>();
         if (site != null && site.getRecommendArticle() != null) {
-//            List<Integer> articles = (List<Integer>) JSON.parse(site.getRecommendArticle());
-            List<Long> articles = JSON.parseArray(site.getRecommendArticle(),Long.class);
+            //            List<Integer> articles = (List<Integer>) JSON.parse(site.getRecommendArticle());
+            List<Long> articles = JSON.parseArray(site.getRecommendArticle(), Long.class);
             QueryWrapper<Article> articleQueryWrapper = new QueryWrapper<>();
-            articleQueryWrapper.in("id",articles);
+            articleQueryWrapper.in("id", articles);
             articleQueryWrapper.orderByDesc("create_time");
             articleList = articleService.list(articleQueryWrapper);
-//            articles.forEach(article -> {
-//                articleList.add(articleService.getById(Long.parseLong(article.toString())));
-//            });
+            //            articles.forEach(article -> {
+            //                articleList.add(articleService.getById(Long.parseLong(article.toString())));
+            //            });
         }
         return articleList;
     }
-
+    
     public List<Map<String, Object>> getRecommendCateArticle(Long siteId) {
         QueryWrapper<Cate> cateQueryWrapper = new QueryWrapper<>();
         cateQueryWrapper.eq("site_id", siteId);
@@ -143,43 +151,44 @@ public class IndexController {
             QueryWrapper<Article> articleQueryWrapper = new QueryWrapper<>();
             articleQueryWrapper.eq("cate_id", cate.getId());
             articleQueryWrapper.eq("status", 1);
-//            articleQueryWrapper.orderByDesc("recommend");
+            //            articleQueryWrapper.orderByDesc("recommend");
             articleQueryWrapper.orderByDesc("create_time");
             articleQueryWrapper.last("limit 6");
             List<Article> articleList = articleService.list(articleQueryWrapper);
-            if (articleList.size()>0){
-                Map<String,Object> cateItem = ObjectUtil.objectToMap(cate);
-                cateItem.put("articleList",articleList);
+            if (articleList.size() > 0) {
+                Map<String, Object> cateItem = ObjectUtil.objectToMap(cate);
+                cateItem.put("articleList", articleList);
                 result.add(cateItem);
             }
         });
         return result;
     }
-
+    
     public List<Map<String, Object>> getNormalCateArticle(Long siteId) {
         QueryWrapper<Cate> cateQueryWrapper = new QueryWrapper<>();
         cateQueryWrapper.eq("site_id", siteId);
         cateQueryWrapper.eq("pid", 0);
         cateQueryWrapper.eq("status", 1);
         List<Cate> firstCateList = cateService.list(cateQueryWrapper);
+        log.info(JSON.toJSONString(firstCateList));
         List<Map<String, Object>> result = new ArrayList<>();
         firstCateList.forEach(cate -> {
-            List<Article> articleList = getIndexArticle(siteId,cate.getId());
-            if (articleList.size()>0){
-                Map<String,Object> cateItem = ObjectUtil.objectToMap(cate);
-                cateItem.put("articleList",articleList);
+            List<Article> articleList = getIndexArticle(siteId, cate.getId());
+            if (articleList.size() > 0) {
+                Map<String, Object> cateItem = ObjectUtil.objectToMap(cate);
+                cateItem.put("articleList", articleList);
                 result.add(cateItem);
             }
         });
         return result;
     }
-
+    
     public List<Article> getIndexArticle(Long siteId, Long pCateId) {
         QueryWrapper<Cate> cateQueryWrapper = new QueryWrapper<>();
         cateQueryWrapper.eq("site_id", siteId);
         cateQueryWrapper.eq("pid", pCateId);
         cateQueryWrapper.eq("status", 1);
-//        cateQueryWrapper.orderByDesc("createTime");
+        //        cateQueryWrapper.orderByDesc("createTime");
         List<Cate> cateList = cateService.list(cateQueryWrapper);
         List<Long> cateIds = new ArrayList<>();
         cateList.forEach(cate -> {

@@ -86,6 +86,7 @@ mybatis-plus:
 logging:
   level:
     root: info
+    com.trojan.cms: debug
   config: classpath:logback-spring.xml
   file:
     path: ./logs
