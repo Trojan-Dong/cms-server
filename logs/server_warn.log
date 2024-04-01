@@ -1,0 +1,42 @@
+[ WARN ] [2024-01-26 09:13:14.360] com.alibaba.druid.pool.DruidDataSource [1294] [main]- removeAbandoned is true, not use in production.
+[ WARN ] [2024-01-26 09:18:23.973] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [208] [http-nio-9080-exec-5]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[ WARN ] [2024-01-26 09:18:28.790] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [208] [http-nio-9080-exec-6]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[ WARN ] [2024-01-26 09:18:29.507] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [208] [http-nio-9080-exec-7]- Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+[ WARN ] [2024-01-26 09:48:57.230] com.alibaba.druid.pool.DruidDataSource [1294] [main]- removeAbandoned is true, not use in production.
+[ WARN ] [2024-01-26 11:29:58.916] com.aliyun.oss [70] [http-nio-9080-exec-7]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:29:59.528] com.aliyun.oss [70] [http-nio-9080-exec-7]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:00.743] com.aliyun.oss [70] [http-nio-9080-exec-7]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:03.149] com.aliyun.oss [70] [http-nio-9080-exec-7]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:12.394] com.aliyun.oss [70] [http-nio-9080-exec-9]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:13.007] com.aliyun.oss [70] [http-nio-9080-exec-9]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:14.210] com.aliyun.oss [70] [http-nio-9080-exec-9]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:16.614] com.aliyun.oss [70] [http-nio-9080-exec-9]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:33.923] com.aliyun.oss [70] [http-nio-9080-exec-10]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:34.535] com.aliyun.oss [70] [http-nio-9080-exec-10]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:35.741] com.aliyun.oss [70] [http-nio-9080-exec-10]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:30:38.141] com.aliyun.oss [70] [http-nio-9080-exec-10]- [Client]Unable to execute HTTP request: name.endpoint
+[ErrorCode]: UnknownHost
+[RequestId]: Unknown
+[ WARN ] [2024-01-26 11:31:56.130] com.alibaba.druid.pool.DruidDataSource [1294] [main]- removeAbandoned is true, not use in production.

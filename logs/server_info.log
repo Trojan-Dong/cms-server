@@ -1,0 +1,75 @@
+[ INFO ] [2024-01-26 09:13:12.771] org.hibernate.validator.internal.util.Version [21] [background-preinit]- HV000001: Hibernate Validator 6.1.7.Final
+[ INFO ] [2024-01-26 09:13:12.777] com.trojan.cms.Application [55] [main]- Starting Application using Java 1.8.0_391 on DONG with PID 20644 (D:\work\workspace\study\simp-cms\simp-cms\target\classes started by 14761 in D:\work\workspace\study\simp-cms\simp-cms)
+[ INFO ] [2024-01-26 09:13:12.778] com.trojan.cms.Application [664] [main]- No active profile set, falling back to default profiles: default
+[ INFO ] [2024-01-26 09:13:13.994] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [108] [main]- Tomcat initialized with port(s): 9080 (http)
+[ INFO ] [2024-01-26 09:13:14.002] org.apache.coyote.http11.Http11NioProtocol [173] [main]- Initializing ProtocolHandler ["http-nio-9080"]
+[ INFO ] [2024-01-26 09:13:14.003] org.apache.catalina.core.StandardService [173] [main]- Starting service [Tomcat]
+[ INFO ] [2024-01-26 09:13:14.003] org.apache.catalina.core.StandardEngine [173] [main]- Starting Servlet engine: [Apache Tomcat/9.0.54]
+[ INFO ] [2024-01-26 09:13:14.095] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [173] [main]- Initializing Spring embedded WebApplicationContext
+[ INFO ] [2024-01-26 09:13:14.095] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [289] [main]- Root WebApplicationContext: initialization completed in 1265 ms
+[ INFO ] [2024-01-26 09:13:14.248] com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [55] [main]- Init DruidDataSource
+[ INFO ] [2024-01-26 09:13:14.956] com.alibaba.druid.pool.DruidDataSource [996] [main]- {dataSource-1} inited
+[ INFO ] [2024-01-26 09:13:15.752] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/user/auth/**'] with []
+[ INFO ] [2024-01-26 09:13:15.752] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/common/**'] with []
+[ INFO ] [2024-01-26 09:13:15.752] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/**/common/**'] with []
+[ INFO ] [2024-01-26 09:13:15.752] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/cate/get/**'] with []
+[ INFO ] [2024-01-26 09:13:15.753] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/article/get/**'] with []
+[ INFO ] [2024-01-26 09:13:15.808] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e689a0, org.springframework.security.web.context.SecurityContextPersistenceFilter@1993d18, org.springframework.security.web.header.HeaderWriterFilter@1321be7, org.springframework.security.web.authentication.logout.LogoutFilter@ba5c65, com.trojan.cms.common.security.filter.JwtAuthenticationFilter@ad79bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1240187, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14864f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b6cb1c, org.springframework.security.web.session.SessionManagementFilter@cf3ae1, org.springframework.security.web.access.ExceptionTranslationFilter@6675fd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b162f2]
+[ INFO ] [2024-01-26 09:13:16.397] org.apache.coyote.http11.Http11NioProtocol [173] [main]- Starting ProtocolHandler ["http-nio-9080"]
+[ INFO ] [2024-01-26 09:13:16.412] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [220] [main]- Tomcat started on port(s): 9080 (http) with context path ''
+[ INFO ] [2024-01-26 09:13:16.419] com.trojan.cms.Application [61] [main]- Started Application in 4.095 seconds (JVM running for 8.89)
+[ INFO ] [2024-01-26 09:17:13.646] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [173] [http-nio-9080-exec-1]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[ INFO ] [2024-01-26 09:17:13.646] org.springframework.web.servlet.DispatcherServlet [525] [http-nio-9080-exec-1]- Initializing Servlet 'dispatcherServlet'
+[ INFO ] [2024-01-26 09:17:13.647] org.springframework.web.servlet.DispatcherServlet [547] [http-nio-9080-exec-1]- Completed initialization in 1 ms
+[ INFO ] [2024-01-26 09:41:13.603] com.alibaba.druid.pool.DruidDataSource [2138] [SpringContextShutdownHook]- {dataSource-1} closing ...
+[ INFO ] [2024-01-26 09:41:13.606] com.alibaba.druid.pool.DruidDataSource [2211] [SpringContextShutdownHook]- {dataSource-1} closed
+[ INFO ] [2024-01-26 09:48:55.910] org.hibernate.validator.internal.util.Version [21] [background-preinit]- HV000001: Hibernate Validator 6.1.7.Final
+[ INFO ] [2024-01-26 09:48:55.914] com.trojan.cms.Application [55] [main]- Starting Application using Java 1.8.0_391 on DONG with PID 22080 (D:\work\workspace\study\simp-cms\simp-cms\target\classes started by 14761 in D:\work\workspace\study\simp-cms\simp-cms)
+[ INFO ] [2024-01-26 09:48:55.914] com.trojan.cms.Application [664] [main]- No active profile set, falling back to default profiles: default
+[ INFO ] [2024-01-26 09:48:56.916] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [108] [main]- Tomcat initialized with port(s): 9080 (http)
+[ INFO ] [2024-01-26 09:48:56.923] org.apache.coyote.http11.Http11NioProtocol [173] [main]- Initializing ProtocolHandler ["http-nio-9080"]
+[ INFO ] [2024-01-26 09:48:56.923] org.apache.catalina.core.StandardService [173] [main]- Starting service [Tomcat]
+[ INFO ] [2024-01-26 09:48:56.924] org.apache.catalina.core.StandardEngine [173] [main]- Starting Servlet engine: [Apache Tomcat/9.0.54]
+[ INFO ] [2024-01-26 09:48:57.006] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [173] [main]- Initializing Spring embedded WebApplicationContext
+[ INFO ] [2024-01-26 09:48:57.006] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [289] [main]- Root WebApplicationContext: initialization completed in 1046 ms
+[ INFO ] [2024-01-26 09:48:57.135] com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [55] [main]- Init DruidDataSource
+[ INFO ] [2024-01-26 09:48:57.711] com.alibaba.druid.pool.DruidDataSource [996] [main]- {dataSource-1} inited
+[ INFO ] [2024-01-26 09:48:58.346] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/user/auth/**'] with []
+[ INFO ] [2024-01-26 09:48:58.346] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/common/**'] with []
+[ INFO ] [2024-01-26 09:48:58.347] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/**/common/**'] with []
+[ INFO ] [2024-01-26 09:48:58.347] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/cate/get/**'] with []
+[ INFO ] [2024-01-26 09:48:58.347] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/article/get/**'] with []
+[ INFO ] [2024-01-26 09:48:58.378] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47bdb, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a4c52, org.springframework.security.web.header.HeaderWriterFilter@5ec96, org.springframework.security.web.authentication.logout.LogoutFilter@13a44f2, com.trojan.cms.common.security.filter.JwtAuthenticationFilter@d15072, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1dd7887, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c2279c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@dbfdb1, org.springframework.security.web.session.SessionManagementFilter@1283877, org.springframework.security.web.access.ExceptionTranslationFilter@670e55, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f2266c]
+[ INFO ] [2024-01-26 09:48:58.788] org.apache.coyote.http11.Http11NioProtocol [173] [main]- Starting ProtocolHandler ["http-nio-9080"]
+[ INFO ] [2024-01-26 09:48:58.799] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [220] [main]- Tomcat started on port(s): 9080 (http) with context path ''
+[ INFO ] [2024-01-26 09:48:58.805] com.trojan.cms.Application [61] [main]- Started Application in 3.339 seconds (JVM running for 3.837)
+[ INFO ] [2024-01-26 10:15:51.606] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [173] [http-nio-9080-exec-1]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[ INFO ] [2024-01-26 10:15:51.606] org.springframework.web.servlet.DispatcherServlet [525] [http-nio-9080-exec-1]- Initializing Servlet 'dispatcherServlet'
+[ INFO ] [2024-01-26 10:15:51.607] org.springframework.web.servlet.DispatcherServlet [547] [http-nio-9080-exec-1]- Completed initialization in 1 ms
+[ INFO ] [2024-01-26 11:31:51.169] com.alibaba.druid.pool.DruidDataSource [2138] [SpringContextShutdownHook]- {dataSource-1} closing ...
+[ INFO ] [2024-01-26 11:31:51.176] com.alibaba.druid.pool.DruidDataSource [2211] [SpringContextShutdownHook]- {dataSource-1} closed
+[ INFO ] [2024-01-26 11:31:54.890] org.hibernate.validator.internal.util.Version [21] [background-preinit]- HV000001: Hibernate Validator 6.1.7.Final
+[ INFO ] [2024-01-26 11:31:54.897] com.trojan.cms.Application [55] [main]- Starting Application using Java 1.8.0_391 on DONG with PID 20872 (D:\work\workspace\study\simp-cms\simp-cms\target\classes started by 14761 in D:\work\workspace\study\simp-cms\simp-cms)
+[ INFO ] [2024-01-26 11:31:54.898] com.trojan.cms.Application [664] [main]- No active profile set, falling back to default profiles: default
+[ INFO ] [2024-01-26 11:31:55.825] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [108] [main]- Tomcat initialized with port(s): 9080 (http)
+[ INFO ] [2024-01-26 11:31:55.831] org.apache.coyote.http11.Http11NioProtocol [173] [main]- Initializing ProtocolHandler ["http-nio-9080"]
+[ INFO ] [2024-01-26 11:31:55.831] org.apache.catalina.core.StandardService [173] [main]- Starting service [Tomcat]
+[ INFO ] [2024-01-26 11:31:55.831] org.apache.catalina.core.StandardEngine [173] [main]- Starting Servlet engine: [Apache Tomcat/9.0.54]
+[ INFO ] [2024-01-26 11:31:55.907] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [173] [main]- Initializing Spring embedded WebApplicationContext
+[ INFO ] [2024-01-26 11:31:55.907] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [289] [main]- Root WebApplicationContext: initialization completed in 967 ms
+[ INFO ] [2024-01-26 11:31:56.029] com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure [55] [main]- Init DruidDataSource
+[ INFO ] [2024-01-26 11:31:56.579] com.alibaba.druid.pool.DruidDataSource [996] [main]- {dataSource-1} inited
+[ INFO ] [2024-01-26 11:31:57.233] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/user/auth/**'] with []
+[ INFO ] [2024-01-26 11:31:57.233] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/common/**'] with []
+[ INFO ] [2024-01-26 11:31:57.233] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/**/common/**'] with []
+[ INFO ] [2024-01-26 11:31:57.233] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/cate/get/**'] with []
+[ INFO ] [2024-01-26 11:31:57.233] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure Ant [pattern='/article/get/**'] with []
+[ INFO ] [2024-01-26 11:31:57.265] org.springframework.security.web.DefaultSecurityFilterChain [51] [main]- Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c2279c, org.springframework.security.web.context.SecurityContextPersistenceFilter@15bad16, org.springframework.security.web.header.HeaderWriterFilter@1e7b749, org.springframework.security.web.authentication.logout.LogoutFilter@120aa05, com.trojan.cms.common.security.filter.JwtAuthenticationFilter@1163a27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@856ff9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@cf3ae1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17b4e04, org.springframework.security.web.session.SessionManagementFilter@12f3050, org.springframework.security.web.access.ExceptionTranslationFilter@18929da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10635fd]
+[ INFO ] [2024-01-26 11:31:57.689] org.apache.coyote.http11.Http11NioProtocol [173] [main]- Starting ProtocolHandler ["http-nio-9080"]
+[ INFO ] [2024-01-26 11:31:57.703] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [220] [main]- Tomcat started on port(s): 9080 (http) with context path ''
+[ INFO ] [2024-01-26 11:31:57.711] com.trojan.cms.Application [61] [main]- Started Application in 3.162 seconds (JVM running for 3.621)
+[ INFO ] [2024-01-26 11:32:02.380] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [173] [http-nio-9080-exec-1]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[ INFO ] [2024-01-26 11:32:02.380] org.springframework.web.servlet.DispatcherServlet [525] [http-nio-9080-exec-1]- Initializing Servlet 'dispatcherServlet'
+[ INFO ] [2024-01-26 11:32:02.381] org.springframework.web.servlet.DispatcherServlet [547] [http-nio-9080-exec-1]- Completed initialization in 1 ms
+[ INFO ] [2024-01-26 11:32:50.791] com.alibaba.druid.pool.DruidDataSource [2138] [SpringContextShutdownHook]- {dataSource-1} closing ...
+[ INFO ] [2024-01-26 11:32:50.796] com.alibaba.druid.pool.DruidDataSource [2211] [SpringContextShutdownHook]- {dataSource-1} closed
