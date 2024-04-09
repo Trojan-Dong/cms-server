@@ -2,6 +2,7 @@ package com.trojan.cms.controller;
 
 import cn.hutool.json.JSONObject;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.trojan.cms.common.result.Result;
 import com.trojan.cms.common.security.authentication.UserPrincipal;
@@ -95,30 +96,31 @@ public class IndexController {
     public Result index(@RequestBody JSONObject jsonObject) {
         Long siteId = jsonObject.getLong("siteId");
         Map<String, Object> data = (Map<String, Object>) caffeineCache.asMap().get(siteId.toString());
-        if (data != null) {
-            return Result.success(data);
-        }
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
-        Callable<List<Article>> Callable1 = () -> getRecommendArticle(siteId);
-        Callable<List<Map<String, Object>>> Callable2 = () -> getRecommendCateArticle(siteId);
-        Callable<List<Map<String, Object>>> Callable3 = () -> getNormalCateArticle(siteId);
-        FutureTask<List<Article>> Task1 = new FutureTask<>(Callable1);
-        FutureTask<List<Map<String, Object>>> Task2 = new FutureTask<>(Callable2);
-        FutureTask<List<Map<String, Object>>> Task3 = new FutureTask<>(Callable3);
-        executorService.submit(Task1);
-        executorService.submit(Task2);
-        executorService.submit(Task3);
+//        if (data != null) {
+//            return Result.success(data);
+////        }
+//        ExecutorService executorService = Executors.newFixedThreadPool(10);
+//        Callable<List<Article>> Callable1 = () -> getRecommendArticle(siteId);
+//        Callable<List<Map<String, Object>>> Callable2 = () -> getRecommendCateArticle(siteId);
+//        Callable<List<Map<String, Object>>> Callable3 = () -> getNormalCateArticle(siteId);
+//        FutureTask<List<Article>> Task1 = new FutureTask<>(Callable1);
+//        FutureTask<List<Map<String, Object>>> Task2 = new FutureTask<>(Callable2);
+//        FutureTask<List<Map<String, Object>>> Task3 = new FutureTask<>(Callable3);
+//        executorService.submit(Task1);
+//        executorService.submit(Task2);
+//        executorService.submit(Task3);
         data = new HashMap<>();
         try {
-            data.put("recommendArticle", Task1.get());
-            data.put("recommendCate", Task2.get());
-            data.put("normalCate", Task3.get());
+            data.put("recommendArticle", getRecommendArticle(siteId));
+            data.put("recommendCate", getRecommendCateArticle(siteId));
+            data.put("normalCate", getNormalCateArticle(siteId));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            executorService.shutdown();
+//            executorService.shutdown();
         }
         caffeineCache.put(siteId.toString(), data);
+        log.info(JSON.toJSONString(data));
         return Result.success(data);
     }
     
@@ -126,15 +128,11 @@ public class IndexController {
         Site site = siteService.getById(siteId);
         List<Article> articleList = new ArrayList<>();
         if (site != null && site.getRecommendArticle() != null) {
-            //            List<Integer> articles = (List<Integer>) JSON.parse(site.getRecommendArticle());
             List<Long> articles = JSON.parseArray(site.getRecommendArticle(), Long.class);
-            QueryWrapper<Article> articleQueryWrapper = new QueryWrapper<>();
-            articleQueryWrapper.in("id", articles);
-            articleQueryWrapper.orderByDesc("create_time");
+            LambdaQueryWrapper<Article> articleQueryWrapper = new LambdaQueryWrapper<>();
+            articleQueryWrapper.in(Article::getId, articles);
+            articleQueryWrapper.orderByDesc(Article::getId);
             articleList = articleService.list(articleQueryWrapper);
-            //            articles.forEach(article -> {
-            //                articleList.add(articleService.getById(Long.parseLong(article.toString())));
-            //            });
         }
         return articleList;
     }
@@ -148,6 +146,7 @@ public class IndexController {
         List<Cate> cateList = cateService.list(cateQueryWrapper);
         List<Map<String, Object>> result = new ArrayList<>();
         cateList.forEach(cate -> {
+            
             QueryWrapper<Article> articleQueryWrapper = new QueryWrapper<>();
             articleQueryWrapper.eq("cate_id", cate.getId());
             articleQueryWrapper.eq("status", 1);
