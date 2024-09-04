@@ -54,7 +54,6 @@ public class UserController {
     public Result login(@RequestBody JSONObject jsonObject) {
         String username = jsonObject.getStr("username");
         String password = jsonObject.getStr("password");
-
         MyUserDetails myUserDetails = (MyUserDetails) authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(username, password)).getPrincipal();
         String token = jwtToken.generateToken(myUserDetails);
@@ -76,14 +75,14 @@ public class UserController {
     }
 
     @PostMapping("/modifyPwd")
-    public Result modifyPwd(UserPrincipal userPrincipal,@RequestBody JSONObject jsonObject) {
+    public Result modifyPwd(@RequestBody JSONObject jsonObject) {
         Long userId = jsonObject.getLong("userId");
         User user = userService.getById(userId);
         String oldPwd = jsonObject.getStr("oldPwd");
         String newPwd = jsonObject.getStr("newPwd");
-        if (!passwordEncoder.matches(oldPwd,user.getPassword())) {
-            return Result.error(new CodeMsg(1,"原密码错误"));
-        }
+//        if (!passwordEncoder.matches(oldPwd,user.getPassword())) {
+//            return Result.error(new CodeMsg(1,"原密码错误"));
+//        }
         user.setPassword(passwordEncoder.encode(newPwd));
         userService.saveOrUpdate(user);
         return Result.success(true);

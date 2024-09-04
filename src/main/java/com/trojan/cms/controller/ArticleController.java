@@ -13,6 +13,7 @@ import com.trojan.cms.entity.Article;
 import com.trojan.cms.entity.Cate;
 import com.trojan.cms.service.ArticleService;
 import com.trojan.cms.service.CateService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,6 +35,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("//article")
+@Api(tags = "文章")
 public class ArticleController {
 
     @Resource

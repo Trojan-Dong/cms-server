@@ -116,8 +116,6 @@ public class IndexController {
             data.put("normalCate", getNormalCateArticle(siteId));
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-//            executorService.shutdown();
         }
         caffeineCache.put(siteId.toString(), data);
         log.info(JSON.toJSONString(data));

@@ -7,9 +7,17 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 缓存配置类，用于配置Caffeine缓存
+ */
 @Configuration
 public class CacheConfig {
-
+    
+    /**
+     * 创建并配置Caffeine缓存实例
+     *
+     * @return 配置好的Caffeine缓存实例
+     */
     @Bean
     public Cache<String, Object> caffeineCache() {
         return Caffeine.newBuilder()
@@ -21,5 +29,5 @@ public class CacheConfig {
                 .maximumSize(1000)
                 .build();
     }
-
+    
 }

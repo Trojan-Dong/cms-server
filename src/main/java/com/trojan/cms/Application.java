@@ -6,9 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
-@SpringBootApplication
+@EnableSwagger2WebMvc
 @MapperScan("com.trojan.cms.mapper")
+@SpringBootApplication(scanBasePackages = {"com.trojan.cms"})
 public class Application {
 
     public static void main(String[] args) {
