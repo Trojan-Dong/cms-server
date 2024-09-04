@@ -1,4 +1,4 @@
-package com.trojan.cms.rest.controller.entity;
+package com.trojan.cms.rest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,57 +8,65 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 /**
  * <p>
- * 文章
+ * 站点设置
  * </p>
+ *
  * @author author
  * @since 2021-04-12
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("article")
-public class Article extends Model<Article> {
-    
+@TableName("site")
+public class Site extends Model<Site> {
+
     private static final long serialVersionUID = 1L;
-    
+
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    
-    private Long siteId;
-    
-    private Long cateId;
-    
-    private Integer status;
-    
-    private Integer recommend;
-    
-    private String title;
-    
-    private String time;
-    
-    private String author;
-    
-    private Integer views;
-    
+
+    private String name;
+
+    private String nickName;
+
+    private String address;
+
+    private String lat;
+
+    private String lng;
+
+    private String logo;
+
+    private String phone;
+
+    private String email;
+
+    private String beian;
+
     private String description;
-    
+
     private String detail;
-    
-    private String header;
-    
-    private String files;
-    
-    private Timestamp createTime;
-    
-    private Timestamp updateTime;
-    
-    
+
+    /**
+     * 域名
+     */
+    private String domain;
+
+    private Integer status;
+
+    /**
+     * []
+     */
+    private String recommendArticle;
+
+    private String banner;
+
+
     @Override
-    public Serializable pkVal() {
+    protected Serializable pkVal() {
         return this.id;
     }
-    
+
 }

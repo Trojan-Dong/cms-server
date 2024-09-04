@@ -1,9 +1,9 @@
-package com.trojan.cms.rest.controller.service.impl;
+package com.trojan.cms.rest.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.trojan.cms.rest.controller.entity.Cate;
-import com.trojan.cms.rest.controller.mapper.CateMapper;
-import com.trojan.cms.rest.controller.service.CateService;
+import com.trojan.cms.rest.entity.Cate;
+import com.trojan.cms.rest.mapper.CateMapper;
+import com.trojan.cms.rest.service.CateService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -9,9 +9,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.trojan.cms.common.result.CodeMsg;
 import com.trojan.cms.common.result.Result;
 import com.trojan.cms.common.security.authentication.UserPrincipal;
-import com.trojan.cms.rest.controller.entity.Cate;
-import com.trojan.cms.rest.controller.service.ArticleService;
-import com.trojan.cms.rest.controller.service.CateService;
+import com.trojan.cms.rest.entity.Cate;
+import com.trojan.cms.rest.service.ArticleService;
+import com.trojan.cms.rest.service.CateService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

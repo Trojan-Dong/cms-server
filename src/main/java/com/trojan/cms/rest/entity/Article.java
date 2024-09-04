@@ -1,4 +1,4 @@
-package com.trojan.cms.rest.controller.entity;
+package com.trojan.cms.rest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,50 +8,57 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * <p>
- * 用户表
+ * 文章
  * </p>
- *
  * @author author
  * @since 2021-04-12
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("user")
-public class User extends Model<User> {
-
+@TableName("article")
+public class Article extends Model<Article> {
+    
     private static final long serialVersionUID = 1L;
-
+    
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-
-    private String username;
-
-    private String password;
-
-    private String nickName;
-
-    private String avatarUrl;
-
-    /**
-     * 0平台1管理员2编辑3用户
-     */
-    private Integer role;
-
+    
     private Long siteId;
-
+    
+    private Long cateId;
+    
     private Integer status;
-
-    private String email;
-
-    private String phone;
-
-
+    
+    private Integer recommend;
+    
+    private String title;
+    
+    private String time;
+    
+    private String author;
+    
+    private Integer views;
+    
+    private String description;
+    
+    private String detail;
+    
+    private String header;
+    
+    private String files;
+    
+    private Timestamp createTime;
+    
+    private Timestamp updateTime;
+    
+    
     @Override
-    protected Serializable pkVal() {
+    public Serializable pkVal() {
         return this.id;
     }
-
+    
 }

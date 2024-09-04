@@ -1,4 +1,4 @@
-package com.trojan.cms.rest.controller.entity;
+package com.trojan.cms.rest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 站点设置
+ * 用户表
  * </p>
  *
  * @author author
@@ -19,49 +19,34 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("site")
-public class Site extends Model<Site> {
+@TableName("user")
+public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    private String name;
+    private String username;
+
+    private String password;
 
     private String nickName;
 
-    private String address;
-
-    private String lat;
-
-    private String lng;
-
-    private String logo;
-
-    private String phone;
-
-    private String email;
-
-    private String beian;
-
-    private String description;
-
-    private String detail;
+    private String avatarUrl;
 
     /**
-     * 域名
+     * 0平台1管理员2编辑3用户
      */
-    private String domain;
+    private Integer role;
+
+    private Long siteId;
 
     private Integer status;
 
-    /**
-     * []
-     */
-    private String recommendArticle;
+    private String email;
 
-    private String banner;
+    private String phone;
 
 
     @Override

@@ -1,4 +1,4 @@
-package com.trojan.cms.rest.controller.entity;
+package com.trojan.cms.rest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
