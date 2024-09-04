@@ -1,7 +1,7 @@
-package com.trojan.cms.service;
+package com.trojan.cms.rest.controller.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.trojan.cms.entity.Site;
+import com.trojan.cms.rest.controller.entity.Site;
 
 /**
  * <p>

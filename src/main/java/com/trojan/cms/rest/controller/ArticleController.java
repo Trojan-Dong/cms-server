@@ -1,4 +1,4 @@
-package com.trojan.cms.controller;
+package com.trojan.cms.rest.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
@@ -9,10 +9,10 @@ import com.trojan.cms.common.result.PageResult;
 import com.trojan.cms.common.result.Result;
 import com.trojan.cms.common.security.authentication.UserPrincipal;
 import com.trojan.cms.common.util.ObjectUtil;
-import com.trojan.cms.entity.Article;
-import com.trojan.cms.entity.Cate;
-import com.trojan.cms.service.ArticleService;
-import com.trojan.cms.service.CateService;
+import com.trojan.cms.rest.controller.entity.Article;
+import com.trojan.cms.rest.controller.entity.Cate;
+import com.trojan.cms.rest.controller.service.ArticleService;
+import com.trojan.cms.rest.controller.service.CateService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

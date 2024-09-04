@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @EnableSwagger2WebMvc
-@MapperScan("com.trojan.cms.mapper")
+@MapperScan("com.trojan.cms.rest.controller.mapper")
 @SpringBootApplication(scanBasePackages = {"com.trojan.cms"})
 public class Application {
 

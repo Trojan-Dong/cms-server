@@ -1,7 +1,7 @@
-package com.trojan.cms.mapper;
+package com.trojan.cms.rest.controller.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.trojan.cms.entity.User;
+import com.trojan.cms.rest.controller.entity.User;
 
 /**
  * <p>

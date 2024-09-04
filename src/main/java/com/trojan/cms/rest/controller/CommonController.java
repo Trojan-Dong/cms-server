@@ -1,11 +1,8 @@
-package com.trojan.cms.controller;
+package com.trojan.cms.rest.controller;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import com.trojan.cms.common.kaptcha.KaptchaConfig;
-import com.trojan.cms.common.result.CodeMsg;
 import com.trojan.cms.common.result.Result;
-import com.trojan.cms.common.util.AliUtil;
 import com.trojan.cms.common.util.FileUtil;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 @RestController

@@ -1,4 +1,4 @@
-package com.trojan.cms.controller;
+package com.trojan.cms.rest.controller;
 
 
 import cn.hutool.core.lang.tree.Tree;
@@ -9,9 +9,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.trojan.cms.common.result.CodeMsg;
 import com.trojan.cms.common.result.Result;
 import com.trojan.cms.common.security.authentication.UserPrincipal;
-import com.trojan.cms.entity.Cate;
-import com.trojan.cms.service.ArticleService;
-import com.trojan.cms.service.CateService;
+import com.trojan.cms.rest.controller.entity.Cate;
+import com.trojan.cms.rest.controller.service.ArticleService;
+import com.trojan.cms.rest.controller.service.CateService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
