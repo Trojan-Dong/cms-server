@@ -3,7 +3,7 @@
 <mapper namespace="com.trojan.cms.rest.mapper.CateMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.trojan.cms.rest.controller.entity.Cate">
+    <resultMap id="BaseResultMap" type="com.trojan.cms.rest.entity.Cate">
         <id column="id" property="id" />
         <result column="site_id" property="siteId" />
         <result column="name" property="name" />
